@@ -1,33 +1,33 @@
 #include<stdio.h>
 #include<stdlib.h>
-struct node
+struct Node
 {
 	int data;
-	struct node* next;
+	struct Node* next;
 };
-void enqueue(struct node** head)
+void enqueue(struct Node** head)
 {
     int data;
     printf("Enter value to enqueue: ");
     scanf("%d", &data);
-	struct node* newnode = (struct node*) malloc(sizeof(struct node));
-	newnode->data = data;
-	newnode->next = NULL;
+	struct Node* newNode = (struct Node*) malloc(sizeof(struct Node));
+	newNode->data = data;
+	newNode->next = NULL;
 	if(*head == NULL)
 	{
-		*head = newnode;
+		*head = newNode;
 		return;
 	}
-	struct node* temp = *head;
+	struct Node* temp = *head;
 	while(temp->next != NULL)
 	{
 		temp = temp->next; 
 	}
-	temp->next = newnode;
+	temp->next = newNode;
 }
-void dequeue(struct node** head)
+void dequeue(struct Node** head)
 {
-	struct node* temp = *head;
+	struct Node* temp = *head;
 	if(temp == NULL)
 	{
         printf("Queue Underflow! Queue is empty.\n");
@@ -38,9 +38,9 @@ void dequeue(struct node** head)
 	free(temp);
     
 }
-void display(struct node* head)
+void display(struct Node* head)
 {
-	struct node* temp = head;
+	struct Node* temp = head;
 	while(temp != NULL)
 	{
 		printf("%d --> ", temp->data);
@@ -49,7 +49,7 @@ void display(struct node* head)
     printf("NULL\n");
 }
 int main() {
-    struct node* head = NULL;
+    struct Node* head = NULL;
     int choice, value;
 
     while (1) {
