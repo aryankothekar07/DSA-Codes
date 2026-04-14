@@ -1,24 +1,24 @@
 #include<stdio.h>
 #include<stdlib.h>
-struct node
+struct Node
 {
 	int data;
-	struct node* next;
+	struct Node* next;
 };
-void push(struct node** head)
+void push(struct Node** head)
 {
     int data;
     printf("Enter value to push: ");
     scanf("%d", &data);
-	struct node* newnode = (struct node*) malloc(sizeof(struct node));
-	newnode->data = data;
-	newnode->next = *head;
-	*head = newnode;
+	struct Node* newNode = (struct Node*) malloc(sizeof(struct Node));
+	newNode->data = data;
+	newNode->next = *head;
+	*head = newNode;
     printf("\n");
 }
-void pop(struct node** head)
+void pop(struct Node** head)
 {
-	struct node* temp = *head;
+	struct Node* temp = *head;
 	if(temp == NULL)
 	{
         printf("Stack Underflow! Stack is empty.\n");
@@ -29,9 +29,9 @@ void pop(struct node** head)
 	free(temp);
     
 }
-void display(struct node* head)
+void display(struct Node* head)
 {
-	struct node* temp = head;
+	struct Node* temp = head;
 	while(temp != NULL)
 	{
 		printf("%d --> ", temp->data);
@@ -40,7 +40,7 @@ void display(struct node* head)
     printf("NULL\n");
 }
 int main() {
-    struct node* head = NULL;
+    struct Node* head = NULL;
     int choice, value;
 
     while (1) {
