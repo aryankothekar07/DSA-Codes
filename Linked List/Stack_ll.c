@@ -39,7 +39,8 @@ void display(struct Node* head)
 	}
     printf("NULL\n");
 }
-int main() {
+int main() 
+{
     struct Node* head = NULL;
     int choice, value;
 
