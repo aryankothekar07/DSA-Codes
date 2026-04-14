@@ -156,11 +156,13 @@ void display(struct Node* head)
 	}
 	printf("NULL\n");
 }
-int main() {
+int main()
+{
     struct Node* head = NULL;
     int choice, value, pos;
 
-    while (1) {
+    while (1) 
+	{
         printf("\n--- Singly Linked List Menu ---\n");
         printf("1. Insert at first\n");
         printf("2. Insert at last\n");
