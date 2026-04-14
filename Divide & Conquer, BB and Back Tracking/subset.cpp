@@ -28,9 +28,21 @@ int main()
 {
     cout << "Enter number of elements: ";
     cin >> n;
-    cout << "Enter elements (sorted): ";
+    cout << "Enter elements: ";
     for (int i = 0; i < n; i++) 
         cin >> w[i];
+    for(int i = 0; i < n - 1; i++)
+    {
+        for(int j = i + 1; j < n; j++)
+        {
+            if(w[i] > w[j])
+            {
+                int temp = w[i];
+                w[i] = w[j];
+                w[j] = temp;
+            }
+        }
+    }
     cout << "Enter target sum: ";
     cin >> target;
     int total = 0;
