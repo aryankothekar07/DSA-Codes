@@ -1,26 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
-struct node
+struct Node
 {
     int data;
-    struct node *left;
-    struct node *right;
+    struct Node *left;
+    struct Node *right;
 };
-struct node *findMin(struct node *root)
+struct Node *findMin(struct Node *root)
 {
     while(root && root->left != NULL)
         root = root->left;
     return root;
 }
-struct node *createNode(int value)
+struct Node *createNode(int value)
 {
-    struct node *temp = (struct node*) malloc(sizeof(struct node));
+    struct Node *temp = (struct Node*) malloc(sizeof(struct Node));
     temp->data = value;
     temp->left = NULL;
     temp->right = NULL;
     return temp;
 }
-struct node* insert(struct node* root, int value)
+struct Node* insert(struct Node* root, int value)
  {
     if (root == NULL) 
     {
@@ -38,7 +38,7 @@ struct node* insert(struct node* root, int value)
 
     return root;
 }
-void inorder(struct node* root)
+void inorder(struct Node* root)
 {
     if (root != NULL) 
     {
@@ -47,7 +47,7 @@ void inorder(struct node* root)
         inorder(root->right);
     }
 }
-void preorder(struct node* root)
+void preorder(struct Node* root)
 {
     if (root != NULL) 
     {
@@ -56,7 +56,7 @@ void preorder(struct node* root)
         preorder(root->right);
     }
 }
-void postorder(struct node* root)
+void postorder(struct Node* root)
 {
     if (root != NULL) 
     {
@@ -65,7 +65,7 @@ void postorder(struct node* root)
         printf("%d ", root->data);
     }
 }
-struct node *delete(struct node* root, int value)
+struct Node *delete(struct Node* root, int value)
 {
     if(root == NULL)
         return NULL;
@@ -82,19 +82,19 @@ struct node *delete(struct node* root, int value)
         }
         else if(root->left == NULL)
         {
-            struct node *temp = root->right;
+            struct Node *temp = root->right;
             free(root);
             return temp;
         }
         else if(root->right == NULL)
         {
-            struct node *temp = root->left;
+            struct Node *temp = root->left;
             free(root);
             return temp;
         }
         else
         {
-            struct node *temp = findMin(root->right);
+            struct Node *temp = findMin(root->right);
             root->data = temp->data;
             root->right = delete(root->right, temp->data);
         }
@@ -103,7 +103,7 @@ struct node *delete(struct node* root, int value)
 }
 int main()
 {
-    struct node* root = NULL;
+    struct Node* root = NULL;
     while(1)
     {
         int choice;
