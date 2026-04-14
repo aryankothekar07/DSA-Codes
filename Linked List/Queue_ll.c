@@ -48,11 +48,13 @@ void display(struct Node* head)
 	}
     printf("NULL\n");
 }
-int main() {
+int main() 
+{
     struct Node* head = NULL;
     int choice, value;
 
-    while (1) {
+    while (1) 
+    {
         printf("\n--- Queue Using Linked List Menu ---\n");
         printf("1. Enqueue\n");
         printf("2. Dequeue\n");

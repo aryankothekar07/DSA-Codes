@@ -44,7 +44,8 @@ int main()
     struct Node* head = NULL;
     int choice, value;
 
-    while (1) {
+    while (1) 
+    {
         printf("\n--- Stack Using Linked List Menu ---\n");
         printf("1. Push\n");
         printf("2. Pop\n");
