@@ -49,7 +49,7 @@ int main()
 		return 1;
 	}
 	int option;
-	do
+	while(1)
 	{
 		printf("Menu\n 1. Push element in stack\n 2. Pop element from stack\n 3. Display stack\n 4. Exit\n Enter your choice: ");
 		scanf("%d", &option);
@@ -69,5 +69,5 @@ int main()
 			default:
 				printf("Invalid option");
 		}
-	}while(option != 4);
+	}
 }
