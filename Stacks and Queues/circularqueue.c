@@ -53,7 +53,7 @@ int main()
 {
 	int option;
     int value;
-	do
+	while(1)
 	{
 		printf("Menu\n 1. Enqueue\n 2. Dequeue\n 3. Display queue\n 4. Exit\n Enter your choice: ");
 		scanf("%d", &option);
@@ -75,4 +75,5 @@ int main()
 			default:
 				printf("Invalid option");
 		}
-	}while(option != 4);
+	}
+}
