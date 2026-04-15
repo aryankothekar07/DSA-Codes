@@ -21,7 +21,7 @@ struct Node *createNode(int value)
     return temp;
 }
 struct Node* insert(struct Node* root, int value)
- {
+{
     if (root == NULL) 
     {
         return createNode(value);
