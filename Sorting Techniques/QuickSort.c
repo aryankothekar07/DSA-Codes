@@ -46,8 +46,7 @@ int main()
         printf("%d ", arr[i]);
     }
     printf("\n");
-    int *ptr = arr;
-    quicksort(ptr, 0, n-1);
+    quicksort(arr, 0, n-1);
     printf("Array after QuickSort: ");
     for(int i = 0; i < n; i++)
     {
